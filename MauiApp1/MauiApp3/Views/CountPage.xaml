@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.Views.CountPage"
+             xmlns:models="clr-namespace:MauiApp3.Models"
+             Title="MainPage"
+             x:DataType="models:Count">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="{OnPlatform 'dotnet_bot.png', Android='booster_notify_h.png'}"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="No Data Binding:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    x:Name="NoDataBindingLabel"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="Data Binding:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    Text="{Binding Msg}"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="Data Binding Property Changed:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    Text="{Binding Msg1}"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="CounterBtnName"
+                Text="Click me" 
+                ButtonCommand="{Binding Path=DataContext.AddCount}"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
