@@ -30,20 +30,5 @@ namespace MauiApp3.Models
         //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Msg1)));
         //    }
         //}
-
-        [RelayCommand]
-        public void AddCount()
-        {
-            MyCount++;
-
-            // Validation
-            if (MyCount > 100)
-            {
-                MyCount = 0;
-            }
-
-            Msg = $"Clicked {MyCount} time";
-            Msg1 = $"Clicked {MyCount} time";
-        }
     }
 }

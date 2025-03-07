@@ -1,36 +1,37 @@
+using System.Diagnostics;
+
 namespace MauiApp2.Views;
 
 public partial class TestPage : ContentPage
 {
+    public string MyText { get; set; } = "Add Times";
+
 	public TestPage()
 	{
 		InitializeComponent();
-
-        string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
-
-        LoadNote(Path.Combine(appDataPath, randomFileName));
 	}
-
-	private void LoadNote(string fileName)
-    {
-        Models.Test testModel = new Models.Test();
-        testModel.Filename = fileName;
-
-        if (File.Exists(fileName))
-        {
-            testModel.Date = File.GetCreationTime(fileName);
-            testModel.Text = File.ReadAllText(fileName);
-        }
-
-        BindingContext = testModel;
-    }
 
     private void SaveButton_Clicked(object sender, EventArgs e)
     {
-        if (BindingContext is Models.Test testModel)
+        if (int.TryParse(MyText, out int count))
         {
-            testModel.StartTest();
+            Models.Count countModel = Models.Count.Instance;
+            Task.Run(() => {
+                for (int i = 0; i < count; i++)
+                {
+                    Thread.Sleep(100);
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        countModel.MyCount++;
+
+                        countModel.Msg =  $"Clicked {countModel.MyCount} time";
+
+                        countModel.Msg1 = $"Clicked {countModel.MyCount} time";
+
+                        Debug.WriteLine($"MyCount={countModel.MyCount}");
+                    });
+                }
+            });
         }
     }
 
@@ -38,4 +39,17 @@ public partial class TestPage : ContentPage
     {
 
     }
+
+    //public static readonly BindableProperty MyTextProperty =
+    //    BindableProperty.Create(
+    //        "MyText",
+    //        typeof(string),
+    //        typeof(TestPage),
+    //        "Add Times"
+    //);
+    //public string MyText
+    //{
+    //    get => (string)GetValue(MyTextProperty);
+    //    set => SetValue(MyTextProperty, value);
+    //}
 }

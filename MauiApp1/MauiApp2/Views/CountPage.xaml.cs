@@ -6,8 +6,7 @@ public partial class CountPage : ContentPage
     {
         InitializeComponent();
 
-        Models.Count mainModel = Models.Count.Instance;
-        BindingContext = mainModel;
+        BindingContext = Models.Count.Instance;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)
@@ -16,9 +15,17 @@ public partial class CountPage : ContentPage
         {
             mainModel.MyCount++;
 
-            NoDataBindingLabel.Text =   $"Clicked {mainModel.MyCount} time";
-            mainModel.Msg =             $"Clicked {mainModel.MyCount} time";
-            mainModel.Msg1 =            $"Clicked {mainModel.MyCount} time";
+            if (mainModel.MyCount > 100)
+            {
+                mainModel.MyCount = 0;
+            }
+
+            NoDataBindingLabelA.Text =   $"Clicked {mainModel.MyCount} time";
+            NoDataBindingLabelB.Text =   $"Clicked {mainModel.MyCount} time";
+
+            mainModel.Msg =              $"Clicked {mainModel.MyCount} time";
+
+            mainModel.Msg1 =             $"Clicked {mainModel.MyCount} time";
         }
     }
 }

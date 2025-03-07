@@ -17,7 +17,6 @@
                 Spacing="10">
                 <Label
                     Text="No Data Binding:"
-                    Style="{StaticResource SubHeadline}"
                     />
                 <Label
                     x:Name="NoDataBindingLabel"

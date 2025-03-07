@@ -59,13 +59,6 @@
                 Command="{Binding AddCountCommand}"
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Fill" />
-
-            <Button
-                Text="Click me Add 10" 
-                Command="{Binding AddCountMultipleTimesCommand}"
-                CommandParameter="10"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

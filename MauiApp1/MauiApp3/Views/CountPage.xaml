@@ -18,11 +18,11 @@
             <HorizontalStackLayout
                 Spacing="10">
                 <Label
-                    Text="No Data Binding:"
+                    Text="No Data Binding A:"
                     Style="{StaticResource SubHeadline}"
                     />
                 <Label
-                    x:Name="NoDataBindingLabel"
+                    x:Name="NoDataBindingLabelA"
                     Style="{StaticResource SubHeadline}"
                     TextColor="Red"
                     />
@@ -31,7 +31,20 @@
             <HorizontalStackLayout
                 Spacing="10">
                 <Label
-                    Text="Data Binding:"
+                    Text="No Data Binding B:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    x:Name="NoDataBindingLabelB"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="Data Binding A:"
                     Style="{StaticResource SubHeadline}"
                     />
                 <Label
@@ -44,7 +57,33 @@
             <HorizontalStackLayout
                 Spacing="10">
                 <Label
-                    Text="Data Binding Property Changed:"
+                    Text="Data Binding B:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    Text="{Binding Msg}"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="Data Binding Property Changed A:"
+                    Style="{StaticResource SubHeadline}"
+                    />
+                <Label
+                    Text="{Binding Msg1}"
+                    Style="{StaticResource SubHeadline}"
+                    TextColor="Red"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="10">
+                <Label
+                    Text="Data Binding Property Changed B:"
                     Style="{StaticResource SubHeadline}"
                     />
                 <Label
@@ -57,8 +96,8 @@
             <Button
                 x:Name="CounterBtnName"
                 Text="Click me" 
-                Command="{Binding AddCountCommand}"
                 SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
