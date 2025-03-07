@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,8 @@ internal class Test
                     Thread.Sleep(100);
                     MainThread.BeginInvokeOnMainThread(() =>
                     {
-                        countModel.MyCount = 0;
-                        countModel.Msg =  $"Clicked {countModel.MyCount} time";
-                        countModel.Msg1 = $"Clicked {countModel.MyCount} time";
+                        countModel.AddCount();
+                        Debug.WriteLine($"MyCount={countModel.MyCount}");
                     });
                 }
             });

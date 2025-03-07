@@ -17,10 +17,10 @@ namespace MauiApp3.Models
         public int MyCount { get; set; } = 0;
 
         [ObservableProperty]
-        private string _msg = string.Empty;
+        private string msg = string.Empty;
 
         [ObservableProperty]
-        private string _msg1 = string.Empty;
+        private string msg1 = string.Empty;
         //public string Msg1
         //{
         //    get => _msg1;
@@ -34,7 +34,16 @@ namespace MauiApp3.Models
         [RelayCommand]
         public void AddCount()
         {
+            MyCount++;
 
+            // Validation
+            if (MyCount > 100)
+            {
+                MyCount = 0;
+            }
+
+            Msg = $"Clicked {MyCount} time";
+            Msg1 = $"Clicked {MyCount} time";
         }
     }
 }

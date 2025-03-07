@@ -10,15 +10,15 @@ public partial class CountPage : ContentPage
         BindingContext = mainModel;
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
-    {
-        if (BindingContext is Models.Count mainModel)
-        {
-            mainModel.MyCount++;
+    //private void OnCounterClicked(object sender, EventArgs e)
+    //{
+    //    if (BindingContext is Models.Count mainModel)
+    //    {
+    //        mainModel.MyCount++;
 
-            NoDataBindingLabel.Text =   $"Clicked {mainModel.MyCount} time";
-            mainModel.Msg =             $"Clicked {mainModel.MyCount} time";
-            mainModel.Msg1 =            $"Clicked {mainModel.MyCount} time";
-        }
-    }
+    //        NoDataBindingLabel.Text =   $"Clicked {mainModel.MyCount} time";
+    //        mainModel.Msg =             $"Clicked {mainModel.MyCount} time";
+    //        mainModel.Msg1 =            $"Clicked {mainModel.MyCount} time";
+    //    }
+    //}
 }

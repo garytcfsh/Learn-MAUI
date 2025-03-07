@@ -25,10 +25,10 @@ internal class Test
                     Thread.Sleep(100);
                     MainThread.BeginInvokeOnMainThread(() =>
                     {
-                        //Debug.WriteLine("")
-                        countModel.MyCount = i;
+                        countModel.MyCount++;
                         countModel.Msg =  $"Clicked {countModel.MyCount} time";
                         countModel.Msg1 = $"Clicked {countModel.MyCount} time";
+                        Debug.WriteLine($"MyCount={countModel.MyCount}");
                     });
                 }
             });

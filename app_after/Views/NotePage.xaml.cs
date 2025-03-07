@@ -34,6 +34,7 @@ public partial class NotePage : ContentPage
 
     private async void SaveButton_Clicked(object sender, EventArgs e)
     {
+        // ISSUE: Validation?
         if (BindingContext is Models.Note note)
             File.WriteAllText(note.Filename, TextEditor.Text);
 
@@ -42,6 +43,7 @@ public partial class NotePage : ContentPage
 
     private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
+        // ISSUE: Validation?
         if (BindingContext is Models.Note note)
         {
             // Delete the file.

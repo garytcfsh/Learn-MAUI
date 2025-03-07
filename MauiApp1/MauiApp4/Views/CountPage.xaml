@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp3.Views.CountPage"
-             xmlns:models="clr-namespace:MauiApp3.Models"
+             x:Class="MauiApp4.Views.CountPage"
+             xmlns:viewModels="clr-namespace:MauiApp4.ViewModels"
              Title="MainPage"
-             x:DataType="models:Count">
+             x:DataType="viewModels:CountViewModel">
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -55,9 +55,15 @@
             </HorizontalStackLayout>
 
             <Button
-                x:Name="CounterBtnName"
                 Text="Click me" 
                 Command="{Binding AddCountCommand}"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill" />
+
+            <Button
+                Text="Click me Add 10" 
+                Command="{Binding AddCountMultipleTimesCommand}"
+                CommandParameter="10"
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>

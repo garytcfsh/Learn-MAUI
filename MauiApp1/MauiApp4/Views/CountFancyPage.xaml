@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.Views.CountFancyPage"
+             xmlns:viewModels="clr-namespace:MauiApp4.ViewModels"
+             Title="MainPage"
+             x:DataType="viewModels:CountViewModel">
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout
+            Spacing="60">
+
+                <VerticalStackLayout
+                    Spacing="10">
+                    <Label
+                        Text="No Data Binding:"
+                        Style="{StaticResource SubHeadline}"
+                        />
+                    <Label
+                        x:Name="NoDataBindingLabel"
+                        Style="{StaticResource SubHeadline}"
+                        TextColor="Red"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="10">
+                    <Label
+                        Text="Data Binding:"
+                        Style="{StaticResource SubHeadline}"
+                        />
+                    <Label
+                        Text="{Binding Msg}"
+                        Style="{StaticResource SubHeadline}"
+                        TextColor="Red"
+                        />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="10">
+                    <Label
+                        Text="Data Binding Property Changed:"
+                        Style="{StaticResource SubHeadline}"
+                        />
+                    <Label
+                        Text="{Binding Msg1}"
+                        Style="{StaticResource SubHeadline}"
+                        TextColor="Red"
+                        />
+                </VerticalStackLayout>
+            
+        </HorizontalStackLayout>
+
+        <ImageButton Source="dotnet_bot.png"
+                     Command="{Binding AddCountCommand}"
+                     />
+
+    </VerticalStackLayout>
+</ContentPage>
