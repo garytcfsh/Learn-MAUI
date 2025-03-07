@@ -12,4 +12,9 @@
         Title="Home"
         ContentTemplate="{DataTemplate views:CountPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Features"
+        ContentTemplate="{DataTemplate views:FeaturesPage}"
+        Route="FeaturesPage" />
 </Shell>
