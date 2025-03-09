@@ -36,26 +36,6 @@
                     ItemsSource="{Binding Source={x:Static local:Theme.AvailableThemes}}"
                     ItemDisplayBinding="{Binding DisplayName}"
                     SelectedItem="{Binding Path=Theme, Source={x:Static local:TokenService.Instance}}"/>
-
-                <Button
-                    Text="Dark" 
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnDarkBtnClicked"
-                    HorizontalOptions="Fill" />
-
-                <Button
-                    Text="Light" 
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnLightBtnClicked"
-                     />
-
-                <Button
-                    Text="System" 
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnSystemBtnClicked"
-                    HorizontalOptions="Fill" />
-                
-
             </HorizontalStackLayout>
 
             <Label
