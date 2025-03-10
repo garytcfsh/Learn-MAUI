@@ -22,4 +22,9 @@
         Title="Count Fancy"
         ContentTemplate="{DataTemplate views:CountFancyPage}"
         Route="FancyPage" />
+
+    <ShellContent
+        Title="People"
+        ContentTemplate="{DataTemplate views:PeoplePage}"
+        Route="PeoplePage" />
 </Shell>

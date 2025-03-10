@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp5.DataTemplates"
-             x:Class="MauiApp5.DataTemplates.PeoplePage"
-             x:Name="root">
+             x:Class="MauiApp4.Views.PeoplePage"
+             xmlns:local="clr-namespace:MauiApp4.Views"
+             xmlns:dataTemplate="clr-namespace:MauiApp4.DataTemplates"
+             xmlns:viewModels="clr-namespace:MauiApp4.ViewModels"
+             x:Name="root"
+             x:DataType="viewModels:PeopleViewModel">
+
     <VerticalStackLayout>
         <Button Text="Add"
-            Clicked="AddBtnClicked"
+            Command="{Binding AddBtnClickedCommand}"
         />
 
-        <Label Text="{Binding Source={x:Reference root}, Path=i, Mode=OneWay}"
+        <Label Text="{Binding Count}"
         />
 
         <StackLayout>
             <CollectionView
-                ItemsSource="{Binding Source={x:Reference root}, Path=People}">
+                ItemsSource="{Binding People}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <local:PersonView />
+                        <dataTemplate:PersonView />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

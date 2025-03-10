@@ -15,9 +15,6 @@
                 Text="{Binding Text}"
                 Placeholder="Enter your note"
                 HeightRequest="100" />
-                <!--
-                Text="{Binding Text, Mode=OneWay}"
-                -->
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
             <Button Text="Save"

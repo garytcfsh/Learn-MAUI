@@ -11,7 +11,7 @@ public partial class PeoplePage : ContentPage
 		InitializeComponent();
 	}
 
-	int i = 0;
+	public int i { get; set; } = 0;
 
     private void AddBtnClicked(object sender, EventArgs e)
     {
