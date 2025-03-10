@@ -6,6 +6,8 @@ public partial class PeoplePage : ContentPage
 {
 	public ObservableCollection<Person> People { get; } = new ObservableCollection<Person>();
 
+	// Selected Person
+
 	public PeoplePage()
 	{
 		InitializeComponent();

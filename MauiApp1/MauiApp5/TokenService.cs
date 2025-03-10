@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MauiApp5.Localization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +33,19 @@ namespace MauiApp5
                 {
                     app.UserAppTheme = value.AppTheme;
                 }
+            }
+        }
+
+        private I18N _i18n;
+        public I18N I18N
+        {
+            get => _i18n;
+            set
+            {
+                if (_i18n == value) return;
+                _i18n = value;
+                CultureInfo.CurrentUICulture = new CultureInfo(value.Code, false);
+                Debug.WriteLine($"{AppResources.myLang}");
             }
         }
     }
